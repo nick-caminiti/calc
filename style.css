@@ -2,29 +2,93 @@ body {
     font-family: 'Courier New', Courier, monospace;
 }
 
+#calc {
+    /* display: flex */
+    width: 400px;
+    border: 4px solid darkcyan;
+    height: 600px;
+}
+
 #display {
+    display: flex;
     border: 1px solid darkgray;
     margin: 5px;
     padding: 2px;
+    height: 150px;
+    justify-content:flex-end;
+    align-items: flex-end;
 }
 
-.nums {
-    border: 1px solid darkblue;
-    margin: 5px;
-    padding: 2px;
+#buttonArea {
+    display: flex;
+}
+
+
+#right {
+    display: flex;
+    /* flex-direction: column; */
+    border: 1px solid darkmagenta;
+    flex-grow: .25; 
 }
 
 .operators {
-    border: 1px solid darkgreen;
-    margin: 5px;
-    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid darkkhaki;
+    flex-grow: 1;
 }
 
-#clear {
-    margin: 5px;
-    padding: 2px;
+#left {
+    flex-grow: 1;    
 }
-#nice {
-    margin: 5px;
-    padding: 2px;
+
+.topOps {
+    display: flex;
 }
+
+.nums {
+    display: flex;
+    flex-direction: column;
+}
+
+.topOp{
+    flex-grow: 1;
+}
+.numRow {
+    display: flex;
+    /* flex-grow: 1; */ 
+}
+.num {
+    flex-grow: 1;
+}
+
+#zero {
+    flex-grow: 2;
+}
+
+/* #buttonArea,
+#left,
+#right,
+.nums,
+.topOps,
+.operators,
+.numRow {
+    display:flex
+}
+.numRow {
+    flex-wrap: wrap;
+}
+
+#left,
+#right,
+.operators,
+.nums {
+    flex-direction: column;
+}
+
+.numRow,
+.num,
+.topOp,
+.operators {
+    flex-grow: 1;
+} */

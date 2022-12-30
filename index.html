@@ -10,30 +10,49 @@
     <body>
         <h1>Do the Math</h1>
         <div id="calc">
-            <div id="display">0</div>
-            <div id="buttonArea">
-                <div class="nums">
-                    <button class="num" id="9">9</button>
-                    <button class="num" id="8">8</button>
-                    <button class="num" id="7">7</button>
-                    <button class="num" id="6">6</button>
-                    <button class="num" id="5">5</button>
-                    <button class="num" id="4">4</button>
-                    <button class="num" id="3">3</button>
-                    <button class="num" id="2">2</button>
-                    <button class="num" id="1">1</button>
-                    <button class="num" id="0">0</button>
-                </div>
-                <div class="operators">
-                    <button class="operator" id="add">+</button>
-                    <button class="operator" id="subtract">-</button>
-                    <button class="operator" id="multiply">*</button>
-                    <button class="operator" id="divide">/</button>
-                    <button class="operator" id="equals">=</button>
-                </div>
-                <button id="clear">Clear</button>
-                <button id="nice">nice</button>
+            <div id="display">
+                <div id="displayText">0</div>
             </div>
+            <div id="buttonArea">
+                <div id="left">
+                    <div class="topOps">
+                        <button class="topOp" id="clear">AC</button>
+                        <button class="topOp" id="negative">+/-</button>
+                        <button class="topOp" id="percent">%</button>                    
+                    </div>
+                    <div class="nums">
+                        <div class="numRow">
+                            <button class="num" id="9">9</button>
+                            <button class="num" id="8">8</button>
+                            <button class="num" id="7">7</button>
+                        </div>
+                        <div class="numRow">
+                            <button class="num" id="6">6</button>
+                            <button class="num" id="5">5</button>
+                            <button class="num" id="4">4</button>
+                        </div>
+                        <div class="numRow">
+                            <button class="num" id="3">3</button>
+                            <button class="num" id="2">2</button>
+                            <button class="num" id="1">1</button>
+                        </div>
+                        <div class="numRow">
+                            <button class="num" id="zero">0</button>
+                            <button class="num" id=".">.</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="right">
+                    <div class="operators">
+                        <button class="operator" id="add">+</button>
+                        <button class="operator" id="subtract">-</button>
+                        <button class="operator" id="multiply">*</button>
+                        <button class="operator" id="divide">/</button>
+                        <button class="operator" id="equals">=</button>
+                    </div>
+                </div>
+            </div>
+            <button id="nice">nice</button>
         </div>
     </body>
 </html>
