@@ -8,19 +8,23 @@ body {
     padding: 2px;
 }
 
-#nums {
+.nums {
     border: 1px solid darkblue;
     margin: 5px;
     padding: 2px;
 }
 
-#operators {
+.operators {
     border: 1px solid darkgreen;
     margin: 5px;
     padding: 2px;
 }
 
 #clear {
+    margin: 5px;
+    padding: 2px;
+}
+#nice {
     margin: 5px;
     padding: 2px;
 }
