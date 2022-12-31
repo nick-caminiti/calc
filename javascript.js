@@ -50,6 +50,7 @@ function clear() {
     num2 = ''
     operator = ''
     nICEMODE = ''
+    document.getElementById('nice').classList.remove("niceEngaged")
 }
 
 buttonArea.addEventListener('click', function (e) {
@@ -61,13 +62,11 @@ buttonArea.addEventListener('click', function (e) {
 buttonArea.addEventListener('click', function (e){
     // debugger
     const isButton = e.target.nodeName === 'BUTTON';
-    const isDecimal = e.target.id === 'decimal'
     const isNum = e.target.classList.contains('num');
     const isOperator = e.target.classList.contains('operator');
     const isNegative = e.target.id === 'negative'
     const isPercent = e.target.id === 'percent'
-    const isNice = e.target.id === 'nice' 
-    
+    const isNice = e.target.id === 'nice'
 
     if (isNice) {
         nICEMODE = true
@@ -87,7 +86,7 @@ buttonArea.addEventListener('click', function (e){
                 displayValue += e.target.textContent
                 displayText.textContent = displayValue
             } else if (e.target.id == "decimal" && displayValue.includes(".")) {
-
+                // do nothing
             } else {
                 displayValue += e.target.textContent
                 displayText.textContent = displayValue
@@ -121,6 +120,14 @@ buttonArea.addEventListener('click', function (e){
         prevPessOperator = isOperator
         
     }
+
+    // STYLES //
+
+    if(isNice) {
+        document.getElementById('nice').classList.add("niceEngaged")
+    }
+
+
 })
 
 
