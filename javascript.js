@@ -1,5 +1,6 @@
 const displayText = document.querySelector('#displayText')
 const buttonArea = document.querySelector('#buttonArea')
+const nice = document.getElementById('#nice')
 let displayValue = ''
 let num1 = null
 let num2 = null
@@ -40,6 +41,10 @@ function operate (oper, a, b) {
 //     console.log(e.target.textContent)
 // })
 
+// nice.addEventListener('click', function (e){
+//     console.log(e.target.textContent)
+// })
+
 function clear() {
     displayValue = 0
     displayText.textContent = displayValue
@@ -49,16 +54,25 @@ function clear() {
 }
 
 buttonArea.addEventListener('click', function (e) {
-    const isClear = e.target.textContent === 'clear'
+    const isClear = e.target.textContent === 'AC'
+    
     if (isClear) {clear()}
+    
 })
 
 buttonArea.addEventListener('click', function (e){
     // debugger
     const isButton = e.target.nodeName === 'BUTTON';
+    const isDecimal = e.target.id === 'decimal'
     const isNum = e.target.classList.contains('num');
     const isOperator = e.target.classList.contains('operator');
+    const isNegative = e.target.id === 'negative'
+    const isPercent = e.target.id === 'percent'
     
+    if (isNegative) {displayValue = Number(displayValue) * -1}
+    if (isPercent) {displayValue = Number(displayValue) / 100}
+    displayText.textContent = displayValue
+
     if(isButton) {
         // debugger
         if(isNum) {
@@ -66,6 +80,8 @@ buttonArea.addEventListener('click', function (e){
                 displayValue = ''
                 displayValue += e.target.textContent
                 displayText.textContent = displayValue
+            } else if (e.target.id == "decimal" && displayValue.includes(".")) {
+
             } else {
                 displayValue += e.target.textContent
                 displayText.textContent = displayValue
@@ -85,7 +101,7 @@ buttonArea.addEventListener('click', function (e){
         }
         prevPressNum = isNum
         prevPessOperator = isOperator
-        console.log(isOperator)
+        
     }
 })
 
