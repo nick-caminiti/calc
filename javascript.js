@@ -54,7 +54,6 @@ function clear() {
 
 buttonArea.addEventListener('click', function (e) {
     const isClear = e.target.textContent === 'AC'
-    
     if (isClear) {clear()}
     
 })

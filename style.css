@@ -9,7 +9,7 @@ body {
     width: 510px;
     border: 4px solid black;
     background-color: black;
-    height: 650px;
+    height: 670px;
     align-self: center;
 }
 
@@ -32,9 +32,9 @@ body {
 #nice {
     /* justify-content: flex-start; */
     align-self:flex-start;
-    padding: 2px 125px;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    padding: 8px 125px;
+    margin-top: 15px;
+    margin-bottom: 10px;
     background-color: black;
     border: 1px solid rgba(255, 140, 0, 0.229);
     border-radius: 25px;
