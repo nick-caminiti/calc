@@ -1,5 +1,5 @@
 const displayText = document.querySelector('#displayText')
-const buttonArea = document.querySelector('#buttonArea')
+const buttonArea = document.querySelector('#calc')
 const nice = document.getElementById('#nice')
 let displayValue = ''
 let num1 = null
@@ -7,6 +7,7 @@ let num2 = null
 let operator = ''
 let prevPressNum
 let prevPessOperator
+let nICEMODE
 
 function add (a,b) {
     return a + b
@@ -41,16 +42,13 @@ function operate (oper, a, b) {
 //     console.log(e.target.textContent)
 // })
 
-// nice.addEventListener('click', function (e){
-//     console.log(e.target.textContent)
-// })
-
 function clear() {
     displayValue = 0
     displayText.textContent = displayValue
     num1 = ''
     num2 = ''
     operator = ''
+    nICEMODE = ''
 }
 
 buttonArea.addEventListener('click', function (e) {
@@ -68,6 +66,10 @@ buttonArea.addEventListener('click', function (e){
     const isOperator = e.target.classList.contains('operator');
     const isNegative = e.target.id === 'negative'
     const isPercent = e.target.id === 'percent'
+    const isNice = e.target.id === 'nice' 
+    
+
+    if (isNice) {nICEMODE = true}
     
     if (isNegative) {displayValue = Number(displayValue) * -1}
     if (isPercent) {displayValue = Number(displayValue) / 100}
@@ -94,9 +96,15 @@ buttonArea.addEventListener('click', function (e){
                 operator = e.target.textContent
             } else {
                 num2 = displayValue
-                displayValue = operate(operator, Number(num1), Number(num2))
-                displayText.textContent = displayValue
-                num1 = displayValue
+                if (nICEMODE) {
+                    displayText.textContent = "69"
+                    num1 = displayValue
+
+                } else {
+                    displayValue = operate(operator, Number(num1), Number(num2))
+                    displayText.textContent = displayValue
+                    num1 = displayValue
+                }
             }
         }
         prevPressNum = isNum
