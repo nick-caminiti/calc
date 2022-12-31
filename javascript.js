@@ -110,15 +110,37 @@ buttonArea.addEventListener('click', function (e){
                         niceToggle = 0
                     }
                 } else {
+                    // /////////////////////////////////////////////////// //
+                    // behavior of pressing operator multiple times is off //
+                    // /////////////////////////////////////////////////// //
                     displayValue = operate(operator, Number(num1), Number(num2))
-                    displayText.textContent = displayValue
                     num1 = displayValue
+                    // debugger
+                    //round after storing value                    
+                    // let numArray = displayValue.toString().split('.')
+                    // let wholeNums = numArray[0].length
+                    // if (numArray[1]) {
+                    //     let decimals = numArray[1].length
+                    // }  
+                    // console.log(numArray)
+                    // if (displayValue.toString().length > 10) {
+                    //     if (wholeNums > 10) {
+                    //         let divideNum = Math.pow(.1, (wholeNums))
+                    //         displayValue /= divideNum
+                    //         console.log(displayValue)
+                    //         displayValue += `E${wholeNums -1}`
+                    //         console.log(displayValue)
+                    //     } else {
+
+                    //     }
+                    // }                     
+                    displayText.textContent = displayValue
+                    
                 }
             }
         }
         prevPressNum = isNum
         prevPessOperator = isOperator
-        
     }
 
     // STYLES //
