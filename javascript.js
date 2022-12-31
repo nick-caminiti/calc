@@ -8,6 +8,7 @@ let operator = ''
 let prevPressNum
 let prevPessOperator
 let nICEMODE
+let niceToggle = 0
 
 function add (a,b) {
     return a + b
@@ -69,7 +70,11 @@ buttonArea.addEventListener('click', function (e){
     const isNice = e.target.id === 'nice' 
     
 
-    if (isNice) {nICEMODE = true}
+    if (isNice) {
+        nICEMODE = true
+        displayValue = 0
+        displayText.textContent = displayValue
+    }
     
     if (isNegative) {displayValue = Number(displayValue) * -1}
     if (isPercent) {displayValue = Number(displayValue) / 100}
@@ -97,9 +102,15 @@ buttonArea.addEventListener('click', function (e){
             } else {
                 num2 = displayValue
                 if (nICEMODE) {
-                    displayText.textContent = "69"
-                    num1 = displayValue
-
+                    if (niceToggle == 0) {
+                        displayText.textContent = "69"
+                        num1 = displayValue
+                        niceToggle = 1
+                    } else {
+                        displayText.textContent = "420"
+                        num1 = displayValue
+                        niceToggle = 0
+                    }
                 } else {
                     displayValue = operate(operator, Number(num1), Number(num2))
                     displayText.textContent = displayValue
