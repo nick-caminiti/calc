@@ -127,6 +127,16 @@ buttonArea.addEventListener('click', function (e){
         document.getElementById('nice').classList.add("niceEngaged")
     }
 
+    const operators = document.querySelectorAll('.operatorEngaged');
+
+    operators.forEach(operator => {
+        operator.classList.remove('operatorEngaged');
+    })
+
+    if (isOperator) {
+        document.getElementById(e.target.id).classList.add("operatorEngaged")
+    }
+
 
 })
 

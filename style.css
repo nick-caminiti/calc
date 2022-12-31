@@ -100,3 +100,8 @@ body {
     border: 1px solid rgb(255, 140, 0);
     color: orange
 }
+
+.operatorEngaged {
+    background-color: rgb(188, 103, 0);
+
+}
